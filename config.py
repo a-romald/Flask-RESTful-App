@@ -11,19 +11,19 @@ class BaseConfig:
 class DevelopementConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEVELOPMENT_DATABASE_URI') or  \
-        'mysql://root:123456@localhost/shop'
+        'mysql://root:secret@localhost/shop'
     WTF_CSRF_ENABLED = False
     
 
 class TestingConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('TESTING_DATABASE_URI') or \
-                              'mysql://root:123456@localhost/shop'
+                              'mysql://root:secret@localhost/shop'
     WTF_CSRF_ENABLED = False 
 
 
 class ProductionConfig(BaseConfig):
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('PRODUCTION_DATABASE_URI') or  \
-        'mysql://root:123456@localhost/shop'
+        'mysql://root:secret@localhost/shop'
     WTF_CSRF_ENABLED = False

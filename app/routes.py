@@ -66,8 +66,8 @@ def products():
 
 
 
-#curl -XPOST 'http://flaskshop.loc/api/register/' -d "username=asport&password=123456&email=sport2@mail.ru"
-#curl -i -X POST 'http://flaskshop.loc/api/register/' -d "username=%D0%92%D0%B5%D0%B1%D1%8E%D0%B7%D0%B5%D1%80&password=qwerty&email=f4@mail.ru"
+#curl -XPOST 'http://flaskshop.loc/api/register/' -d "username=sport&password=qwerty&email=sport@mail.ru"
+#curl -i -X POST 'http://flaskshop.loc/api/register/' -d "username=%D0%92%D0%B5%D0%B1%D1%8E%D0%B7%D0%B5%D1%80&password=qwerty&email=f@mail.ru"
 @app.route('/api/register/', methods=['POST'])
 def register() : 
 	try :   
@@ -100,7 +100,7 @@ def register() :
 	
 
 
-#curl -XPOST 'http://flaskshop.loc/api/login/' -d "email=sport@mail.ru&password=123456"
+#curl -XPOST 'http://flaskshop.loc/api/login/' -d "email=sport@mail.ru&password=qwerty"
 @app.route('/api/login/', methods=['POST'])
 def login() :
 	try :
