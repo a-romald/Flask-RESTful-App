@@ -50,7 +50,7 @@ Using:
 	- Get all orders of user:
 	curl -i -X GET 'http://flaskshop.loc/api/orders/?token=e48e556a4c554a77b3d42f82b96c3975'
 
-	- Get single request of user:
+	- Get single order of user:
 	curl -i -X GET 'http://flaskshop.loc/api/order/1/?token=e48e556a4c554a77b3d42f82b96c3975'
 
 
@@ -82,13 +82,19 @@ Install software from the user vagrant:
 
 	- Create virtual environment for flask:
 	mkvirtualenv flaskshop
+	If the project developed with python3, then first get path to python3:
+	which python3 #/usr/bin/python3
+	then type to create virtual environment:
+	mkvirtualenv --python=/usr/bin/python3 flaskshop
 
-	- Install packages for application, if necessary with --user flag as pip3 install --user Flask:
+	- Install packages for application:
 	pip3 install Flask
 	pip3 install Flask-Script	
 	pip3 install mysqlclient
 	pip3 install flask-sqlalchemy
 	pip3 install flask-wtf
+	- Also install uwsgi for virtual environment:
+	pip3 install uwsgi
 
 	- Create database shop in mysql server:
 	CREATE DATABASE shop;
@@ -112,7 +118,7 @@ Install software from the user vagrant:
 	- Run application with uwsgi:
 	uwsgi --http-socket :9090 --home /home/vagrant/.virtualenvs/flaskshop --chdir /vagrant/flaskshop --wsgi-file run.py --callable app
 
-	- For python3 and virtual environment it is also possible to run:
+	- For python3 and virtual environment to run:
 	workon flaskshop
 	which uwsgi #/home/vagrant/.virtualenvs/flaskshop/bin/uwsgi
 	/home/vagrant/.virtualenvs/flaskshop/bin/uwsgi --http-socket :9090 --home /home/vagrant/.virtualenvs/flaskshop --chdir /vagrant/flaskshop --wsgi-file run.py --callable app
